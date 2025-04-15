@@ -9,7 +9,7 @@ describe('Teste para o componente Post', () => {
     });
 });
 
-describe('Teste para o Primeiro comentario', () => {
+describe('Teste para os insersão de comentarios', () => {
     test('Deve retornar o valor digitado', () =>  {
         const { debug } = render(<PostComment  />);
 
@@ -22,13 +22,7 @@ describe('Teste para o Primeiro comentario', () => {
         // eslint-disable-next-line testing-library/no-debugging-utils
         debug()
         expect(screen.getByText('Primeiro comentario')).toBeInTheDocument()
-    });
-});
-
-describe('Teste para o Segundo comentario', () => {
-    test('Deve retornar o valor digitado', () =>  {
-        const { debug } = render(<PostComment  />);
-
+        
         fireEvent.change(screen.getByTestId('campo-comment'), {
             target: {
                 value: 'Segundo comentario'
@@ -40,4 +34,3 @@ describe('Teste para o Segundo comentario', () => {
         expect(screen.getByText('Segundo comentario')).toBeInTheDocument()
     });
 });
-
